@@ -19,13 +19,12 @@
  - PhotoGrid
  - PetGrid
  - FollowsGrid
-
-**EditProfileContainer**
- - CoverPhoto
- - ProfilePhoto
- - EditProfileForm
-  + UserInfo
-  + PetInfo
+ - EditProfileContainer
+  + CoverPhoto
+  + ProfilePhoto
+  + EditProfileForm
+   - UserInfo
+   - PetInfo
 
 **SearchResult**
  - SearchBar
@@ -34,3 +33,15 @@
 **DiscoverContainer**
  - NavLinks
  - PhotoGrid
+
+## Routes
+
+|Path   | Component   |
+|-------|-------------|
+| "/sign-up" | "AuthFormContainer" |
+| "/sign-in" | "AuthFormContainer" |
+| "/profile/:profileId" | "ProfileContainer" |
+| "/home" | "HomeContainer" |
+| "/search" | "SearchResult" |
+| "/photo/:photoId" | "PhotoContainer" |
+| "/discover" | "DiscoverContainer" |
