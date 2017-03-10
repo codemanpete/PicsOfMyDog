@@ -6,6 +6,15 @@
       username: "sample_user"
     }
   },
+  profile: {
+    viewUser: {
+      username: "sample_user",
+      name: "First Last",
+      biography: "This is my story.",
+      cover_photo_url: "",
+      profile_pic_url: ""
+    }
+  },
   forms: {
     signUp: { errors: [] },
     logIn: { errors: [] },

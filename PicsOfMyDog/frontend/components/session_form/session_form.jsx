@@ -68,7 +68,7 @@ class SessionForm extends React.Component {
   render() {
     return(
       <form onSubmit={this.handleSubmit}>
-        Welcome to BenchBnB!
+        Welcome to 500 Pics of my Dog!
         <br/>
         Please {this.props.formType} or {this.alternativeLink()}
         {this.renderErrors()}
