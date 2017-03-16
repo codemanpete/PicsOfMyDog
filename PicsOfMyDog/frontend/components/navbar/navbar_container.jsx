@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Navbar from './navbar';
 import { logout } from '../../actions/session_actions';
+import { postPhoto } from '../../actions/photo_actions';
 
 
 const mapStateToProps = ({ session }) => ({
@@ -8,7 +9,8 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  postPhoto: (photo) => dispatch(postPhoto(photo))
 });
 
 export default connect(

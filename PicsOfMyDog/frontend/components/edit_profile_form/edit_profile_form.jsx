@@ -5,11 +5,11 @@ class EditProfileForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.navigateToProfile = this.navigateToProfile.bind(this);
   }
 
   componentWillMount() {
     this.state = this.props.user;
-    console.log(this.state);
   }
 
   update(field) {
@@ -41,25 +41,27 @@ class EditProfileForm extends React.Component {
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit}>
-        <br/>
-        <h2>{this.state.username}, edit your profile</h2>
-        <br/>
-        <label> Name:
-          <input type="text"
-            value={this.state.name}
-            onChange={this.update('name')} />
-        </label>
-        <br/>
-        <textarea
-          cols='30'
-          rows='10'
-          value={this.state.biography}
-          onChange={this.update('biography')}></textarea>
-        <br/>
-        <button type="submit" name="action" value="Submit">Submit</button>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <br/>
+          <h2>{this.state.username}, edit your profile</h2>
+          <br/>
+          <label> Name:
+            <input type="text"
+              value={this.state.name}
+              onChange={this.update('name')} />
+          </label>
+          <br/>
+          <textarea
+            cols='30'
+            rows='10'
+            value={this.state.biography}
+            onChange={this.update('biography')}></textarea>
+          <br/>
+          <button type="submit" name="action" value="Submit">Submit</button>
+        </form>
         <button onClick={ this.navigateToProfile }>Cancel</button>
-      </form>
+      </div>
     );
   }
 }
