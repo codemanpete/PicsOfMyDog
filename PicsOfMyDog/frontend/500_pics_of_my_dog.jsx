@@ -9,8 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser} };
     store = configureStore(preloadedState);
+    window.store = store;
   } else {
     store = configureStore();
+
+    window.store = store;
   }
   ReactDOM.render(<Root store={ store } />, root);
 });

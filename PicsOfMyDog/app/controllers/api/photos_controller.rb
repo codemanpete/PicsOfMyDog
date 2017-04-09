@@ -12,7 +12,12 @@ class Api::PhotosController < ApplicationController
   end
 
   def index
-    @photos = Photo.all
+    if params[:user_id]
+      user = User.find(params[:user_id])
+      @photos = user.photos
+    else
+      @photos = Photo.all
+    end
     render "/api/photos/index"
   end
 

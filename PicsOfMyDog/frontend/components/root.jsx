@@ -6,6 +6,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import ProfileShowContainer from './profile/profile_show_container';
 import EditProfileForm from './edit_profile_form/edit_profile_form_container';
 import PhotoViewContainer from './photo_view/photo_view_container';
+import PhotoListContainer from './photo_list/photo_list_container';
 
 const Root = ({ store }) => {
 
@@ -31,7 +32,8 @@ const Root = ({ store }) => {
           <Route path="/signup" component={ SessionFormContainer} onEnter={ _redirectIfLoggedIn } />
           <Route path="/users/:userId" component={ ProfileShowContainer } onEnter={ _ensureLoggedIn } />
           <Route path="/edit-profile" component={ EditProfileForm } onEnter={ _ensureLoggedIn } />
-          <Route path="/photos/:photoId" component={ PhotoViewContainer } />
+          <Route path="/photos" component={ PhotoListContainer } onEnter={ _ensureLoggedIn } />
+            <Route path="/photos/:photoId" component={ PhotoViewContainer } />
         </Route>
       </Router>
     </Provider>

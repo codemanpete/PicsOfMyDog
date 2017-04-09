@@ -12,3 +12,25 @@ export const fetchPhoto = (id) => {
     url: `/api/photos/${id}`
   });
 };
+
+export const fetchAllPhotos = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/photos'
+  });
+};
+
+export const fetchUserPhotos = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/users/${id}/photos`
+  });
+};
+
+export const createTagging = (tagging) => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/taggings',
+    data: tagging
+  });
+};

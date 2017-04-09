@@ -1,11 +1,35 @@
 import * as APIUtil from '../util/photo_api_util';
 
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
+export const RECEIVE_ALL_PHOTOS = "RECEIVE_ALL_PHOTOS";
+export const RECEIVE_TAGGING = "RECEIVE_TAGGING";
 
 export const receivePhoto = (photo) => ({
   type: RECEIVE_PHOTO,
   photo
 });
+
+export const receiveAllPhotos = (photos) => ({
+  type: RECEIVE_ALL_PHOTOS,
+  photos
+});
+
+export const receiveTagging = (tagging) => ({
+  type: RECEIVE_TAGGING,
+  tagging
+});
+
+export const requestAllPhotos = () => (dispatch) => (
+  APIUtil.fetchAllPhotos().then(
+    photos => dispatch(receiveAllPhotos(photos))
+  )
+);
+
+export const requestUserPhotos = (id) => (dispatch) => (
+  APIUtil.fetchUserPhotos(id).then(
+    photos => dispatch(receiveAllPhotos(photos))
+  )
+);
 
 export const fetchPhoto = id => dispatch => (
   APIUtil.fetchPhoto(id).then(
@@ -15,6 +39,12 @@ export const fetchPhoto = id => dispatch => (
 
 export const postPhoto = photo => dispatch => (
   APIUtil.postPhoto(photo).then(
-    () => dispatch(receivePhoto(photo))
+    (newPhoto) => dispatch(receivePhoto(newPhoto))
+  )
+);
+
+export const createTagging = tagging => dispatch => (
+  APIUtil.createTagging(tagging).then(
+    (updatedPhoto) => dispatch(receivePhoto(updatedPhoto))
   )
 );

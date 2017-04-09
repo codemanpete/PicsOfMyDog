@@ -1,9 +1,15 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class UploadButton extends React.Component {
   constructor(props) {
     super(props);
     this.upload = this.upload.bind(this);
+    this.navigateToProfile = this.navigateToProfile.bind(this);
+  }
+
+  navigateToProfile() {
+    this.props.router.push(`/users/${this.props.currentUser.id}`);
   }
 
   upload(e){
@@ -16,6 +22,7 @@ class UploadButton extends React.Component {
           title: "New Photo"
         };
         this.props.postPhoto({photo: newPhoto});
+        this.navigateToProfile();
       }
     }.bind(this));
   }
@@ -29,4 +36,4 @@ class UploadButton extends React.Component {
   }
 }
 
-export default UploadButton;
+export default withRouter(UploadButton);
