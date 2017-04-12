@@ -4,7 +4,8 @@ import merge from 'lodash/merge';
 const _emptyPhoto = {
   photo_url: "",
   owner_id: 0,
-  title: ""
+  title: "",
+  taggings: []
 };
 
 const PhotoReducer = (state = _emptyPhoto, action) => {

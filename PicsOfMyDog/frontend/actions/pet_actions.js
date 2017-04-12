@@ -19,7 +19,7 @@ export const createPet = pet => dispatch => (
   ))
 );
 
-export const requestUserPets= (userId) => (dispatch) => (
+export const requestUserPets = (userId) => (dispatch) => (
   APIUtil.fetchUserPets(userId).then(
     pets => dispatch(receiveSomePets(pets))
   )

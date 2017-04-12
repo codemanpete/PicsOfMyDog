@@ -3,8 +3,9 @@ import { fetchPhoto } from '../../actions/photo_actions';
 
 import PhotoView from './photo_view';
 
-const mapStateToProps = ({ photo }) => ({
-  photo
+const mapStateToProps = ({ photo, session }) => ({
+  photo,
+  currentUser: session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

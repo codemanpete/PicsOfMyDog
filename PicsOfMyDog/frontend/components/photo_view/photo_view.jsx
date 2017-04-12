@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import OwnerLink from './owner_link';
+import TaggingContainer from './tagging_container';
 
 class PhotoView extends React.Component {
 
@@ -14,13 +15,16 @@ class PhotoView extends React.Component {
   //   }
   // }
 
+
   render() {
+    let photo = this.props.photo;
     return(
       <div>
-        <img src={this.props.photo.photo_url} alt={this.props.photo.title} />
+        <img src={photo.photo_url} alt={photo.title} />
         <div>
-          <OwnerLink owner_id={this.props.photo.owner_id} owner_name={this.props.photo.owner_name} />
+          <OwnerLink owner_id={photo.owner_id} owner_name={photo.owner_name} />
         </div>
+        <TaggingContainer photo={photo} />
       </div>
     );
   }
