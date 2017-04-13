@@ -34,3 +34,10 @@ export const createTagging = (tagging) => {
     data: { tagging }
   });
 };
+
+export const fetchPetsPhotos = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/pets/${id}/photos`
+  });
+};

@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const PetListItem = ({ pet }) => (
   <li>
-    <span>{pet.pet_name}</span>
+    <span><Link to={`/pets/${pet.id}/photos`}>{pet.pet_name}</Link></span>
   </li>
 );
 

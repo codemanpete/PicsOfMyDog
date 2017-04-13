@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       resources :pets, only: [:index]
     end
     resource :session, only: [:create, :destroy]
-    resources :pets, only: [:create]
+    resources :pets, only: [:create] do
+      resources :photos, only: [:index]
+    end
     resources :photos, only: [:create, :show, :index]
     resources :taggings, only: [:create]
   end

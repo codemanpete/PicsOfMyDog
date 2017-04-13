@@ -31,6 +31,12 @@ export const requestUserPhotos = (id) => (dispatch) => (
   )
 );
 
+export const requestPetsPhotos = (id) => dispatch => (
+  APIUtil.fetchPetsPhotos(id).then(
+    photos => dispatch(receiveAllPhotos(photos))
+  )
+);
+
 export const fetchPhoto = id => dispatch => (
   APIUtil.fetchPhoto(id).then(
     (photo) => dispatch(receivePhoto(photo))

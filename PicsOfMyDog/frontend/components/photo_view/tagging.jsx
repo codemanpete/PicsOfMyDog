@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class Tagging extends React.Component {
   constructor(props) {
@@ -67,7 +68,11 @@ class Tagging extends React.Component {
       <div>
         <div>
           <ul>
-            { this.props.photo.taggings.map(tag => <li>{tag.pet_name}</li>) }
+            { this.props.photo.taggings.map(tag =>
+              <li key={tag.pet_id}>
+                <Link to={`/pets/${tag.pet_id}/photos`}>{tag.pet_name}</Link>
+              </li>
+            )}
           </ul>
         </div>
         { this.taggingButton() }

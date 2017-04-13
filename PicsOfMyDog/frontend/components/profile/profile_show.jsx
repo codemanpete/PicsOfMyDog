@@ -18,7 +18,7 @@ class ProfileShow extends React.Component {
         <h4>{this.props.viewUser.biography}</h4>
         <PhotoListContainer userId={this.props.params.userId} />
         <br />
-        <PetDockContainer userId={this.props.params.userId} />
+        <PetDockContainer userId={parseInt(this.props.params.userId)} />
       </div>
     );
   }

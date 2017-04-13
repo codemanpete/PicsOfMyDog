@@ -15,6 +15,9 @@ class Api::PhotosController < ApplicationController
     if params[:user_id]
       user = User.find(params[:user_id])
       @photos = user.photos
+    elsif params[:pet_id]
+      pet = Pet.find(params[:pet_id])
+      @photos = pet.photos
     else
       @photos = Photo.all
     end

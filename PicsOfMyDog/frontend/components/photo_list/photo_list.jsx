@@ -5,6 +5,8 @@ class PhotoList extends React.Component {
   componentDidMount() {
     if (this.props.userId) {
       this.props.requestUserPhotos(this.props.userId);
+    } else if (this.props.petId) {
+      this.props.requestPetsPhotos(this.props.petId);
     } else {
       this.props.requestAllPhotos();
     }

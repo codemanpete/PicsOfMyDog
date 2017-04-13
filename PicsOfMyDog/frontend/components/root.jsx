@@ -7,6 +7,7 @@ import ProfileShowContainer from './profile/profile_show_container';
 import EditProfileForm from './edit_profile_form/edit_profile_form_container';
 import PhotoViewContainer from './photo_view/photo_view_container';
 import PhotoListContainer from './photo_list/photo_list_container';
+import PetPhotosContainer from './pet_photos/pet_photos_container';
 
 const Root = ({ store }) => {
 
@@ -34,6 +35,7 @@ const Root = ({ store }) => {
           <Route path="/edit-profile" component={ EditProfileForm } onEnter={ _ensureLoggedIn } />
           <Route path="/photos" component={ PhotoListContainer } onEnter={ _ensureLoggedIn } />
             <Route path="/photos/:photoId" component={ PhotoViewContainer } />
+          <Route path="/pets/:petId/photos" component={ PetPhotosContainer } onEnter={ _ensureLoggedIn }/>
         </Route>
       </Router>
     </Provider>

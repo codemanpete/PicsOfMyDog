@@ -5,6 +5,7 @@ class PetDock extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.createPetForm = this.createPetForm.bind(this);
   }
 
   componentWillMount() {
@@ -35,19 +36,29 @@ class PetDock extends React.Component {
     });
   }
 
+  createPetForm() {
+    if(this.props.userId === this.props.currentUserId) {
+      return(
+        <div>
+          <label> Name:
+          <input type="text"
+            value={this.state.pet_name}
+            onChange={this.update('pet_name')} />
+          </label>
+          <br />
+          <button onClick={this.handleClick}>Create Pet</button>
+        </div>
+      );
+    }
+  }
+
   render () {
     return (
       <div>
         <ul>
           {this.props.pets.map(pet => <PetListItem key={pet.id} pet={pet} />)}
         </ul>
-        <label> Name:
-          <input type="text"
-            value={this.state.pet_name}
-            onChange={this.update('pet_name')} />
-        </label>
-        <br />
-        <button onClick={this.handleClick}>Create Pet</button>
+        { this.createPetForm() }
       </div>
     );
   }
