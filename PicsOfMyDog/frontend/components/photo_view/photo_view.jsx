@@ -19,12 +19,16 @@ class PhotoView extends React.Component {
   render() {
     let photo = this.props.photo;
     return(
-      <div>
-        <img src={photo.photo_url} alt={photo.title} />
-        <div>
-          <OwnerLink owner_id={photo.owner_id} owner_name={photo.owner_name} />
+      <div className="main_container">
+        <div className="photo_container">
+          <img className="photo" src={photo.photo_url} alt={photo.title} />
         </div>
-        <TaggingContainer photo={photo} />
+        <div className="sidebar_container">
+          <div>
+            <OwnerLink owner_id={photo.owner_id} owner_name={photo.owner_name} />
+          </div>
+          <TaggingContainer photo={photo} />
+        </div>
       </div>
     );
   }

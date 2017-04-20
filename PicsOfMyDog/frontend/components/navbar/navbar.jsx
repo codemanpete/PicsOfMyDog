@@ -11,11 +11,29 @@ const loggedOutBar = () => (
 );
 
 const loggedInBar = (currentUser, logout, postPhoto) => (
-  <div className="navbar">
-    <h2>Welcome, { currentUser.username }</h2>
-    <button onClick={logout}>Log Out</button>
-    <UploadButton currentUser={currentUser} postPhoto={postPhoto} />
-    <Link to="/edit-profile">Edit Profile</Link>
+  <div className="navbar clearfix">
+    <ul className="clearfix">
+      <li>
+        <Link className="button" to="/photos">500Picsofmydog</Link>
+      </li>
+      <li>
+        <span className="button">(Search Bar)</span>
+      </li>
+    </ul>
+    <ul style={{float: "right"}}>
+      <li>
+        <Link className="button" to={`/users/${currentUser.id}`}>Profile</Link>
+      </li>
+      <li>
+        <Link className="button" to="/edit-profile">Edit Profile</Link>
+      </li>
+      <li>
+        <button className="button" onClick={logout}>Log Out</button>
+      </li>
+      <li>
+        <UploadButton currentUser={currentUser} postPhoto={postPhoto} />
+      </li>
+    </ul>
   </div>
 );
 

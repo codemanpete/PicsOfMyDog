@@ -25,5 +25,12 @@
     "redux-thunk": "^2.2.0",
     "webpack": "^1.14.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
+  },
+  "scripts": {
+    "postinstall": "webpack"
+  }
 }
