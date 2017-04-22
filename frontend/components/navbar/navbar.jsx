@@ -3,10 +3,15 @@ import { Link } from 'react-router';
 import UploadButton from './upload_button';
 
 const loggedOutBar = () => (
-  <div className="navbar">
-    <Link to="/login">Login</Link>
-    &nbsp;or&nbsp;
-    <Link to="/signup">Sign Up</Link>
+  <div className="navbar clearfix">
+    <ul className="clearfix">
+      <li>
+        <Link className="button" to="/login">Login</Link>
+      </li>
+      <li>
+        <Link className="button" to="/signup">Sign Up</Link>
+      </li>
+    </ul>
   </div>
 );
 
