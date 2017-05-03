@@ -30,9 +30,6 @@ const loggedInBar = (currentUser, logout, postPhoto) => (
         <Link className="button" to={`/users/${currentUser.id}`}>Profile</Link>
       </li>
       <li>
-        <Link className="button" to="/edit-profile">Edit Profile</Link>
-      </li>
-      <li>
         <button className="button" onClick={logout}>Log Out</button>
       </li>
       <li>

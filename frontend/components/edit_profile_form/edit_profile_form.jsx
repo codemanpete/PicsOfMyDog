@@ -26,7 +26,7 @@ class EditProfileForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.editUser(user);
-    this.navigateToProfile();
+    this.props.closeModal();
   }
 
   renderErrors() {
@@ -44,23 +44,24 @@ class EditProfileForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <br/>
-          <h2>{this.state.username}, edit your profile</h2>
-          <br/>
-          <label> Name:
+          <label>Name
+            <br/>
             <input type="text"
               value={this.state.name}
               onChange={this.update('name')} />
           </label>
           <br/>
-          <textarea
-            cols='30'
-            rows='10'
-            value={this.state.biography}
-            onChange={this.update('biography')}></textarea>
+          <label>About (optional)
+            <br/>
+            <textarea
+              cols='30'
+              rows='10'
+              value={this.state.biography}
+              onChange={this.update('biography')}></textarea>
+          </label>
           <br/>
           <button type="submit" name="action" value="Submit">Submit</button>
         </form>
-        <button onClick={ this.navigateToProfile }>Cancel</button>
       </div>
     );
   }
