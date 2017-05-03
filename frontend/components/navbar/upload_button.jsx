@@ -19,8 +19,11 @@ class UploadButton extends React.Component {
         let newPhoto = {
           photo_url: results[0].url,
           owner_id: this.props.currentUser.id,
-          title: "New Photo"
+          title: "New Photo",
+          height: results[0].height,
+          width: results[0].width
         };
+        console.log(results);
         this.props.postPhoto({photo: newPhoto});
         this.navigateToProfile();
       }

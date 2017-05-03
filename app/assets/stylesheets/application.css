@@ -15,7 +15,7 @@
  */
 
 body {
-  background-color: cyan;
+  background-color: lightgray;
   margin: 0;
   padding: 0;
   font-family: Helvetica Neue, HelveticaNeue, Helvetica;
@@ -102,4 +102,31 @@ html {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+}
+
+.list_photos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list_photos::after {
+  content: '';
+  flex-grow: 999999999;
+}
+
+.list_photos div {
+  margin: 2px;
+  background-color: gray;
+  position: relative;
+}
+
+.list_photos i {
+  display: block;
+}
+
+.list_photos img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  vertical-align: bottom;
 }

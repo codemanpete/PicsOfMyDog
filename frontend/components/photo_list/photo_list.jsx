@@ -15,10 +15,8 @@ class PhotoList extends React.Component {
   render() {
     const { photos, children } = this.props;
     return (
-      <div>
-        <ul>
-          {photos.map(photo => <PhotoListItem key={photo.id} photo={photo} />)}
-        </ul>
+      <div className="list_photos">
+        {photos.map(photo => <PhotoListItem key={photo.id} photo={photo} />)}
         {children}
       </div>
     );
