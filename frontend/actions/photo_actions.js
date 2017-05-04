@@ -3,6 +3,7 @@ import * as APIUtil from '../util/photo_api_util';
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
 export const RECEIVE_ALL_PHOTOS = "RECEIVE_ALL_PHOTOS";
 export const RECEIVE_TAGGING = "RECEIVE_TAGGING";
+export const RECEIVE_OWNER = "RECEIVE_OWNER";
 
 export const receivePhoto = (photo) => ({
   type: RECEIVE_PHOTO,
@@ -17,6 +18,11 @@ export const receiveAllPhotos = (photos) => ({
 export const receiveTagging = (tagging) => ({
   type: RECEIVE_TAGGING,
   tagging
+});
+
+export const receiveOwner = owner => ({
+  type: RECEIVE_OWNER,
+  owner
 });
 
 export const requestAllPhotos = () => (dispatch) => (
@@ -52,5 +58,11 @@ export const postPhoto = photo => dispatch => (
 export const createTagging = tagging => dispatch => (
   APIUtil.createTagging(tagging).then(
     (updatedPhoto) => dispatch(receivePhoto(updatedPhoto))
+  )
+);
+
+export const requestOwner = id => dispatch => (
+  APIUtil.fetchOwner(id).then(
+    (owner) => dispatch(receiveOwner(owner))
   )
 );

@@ -15,7 +15,7 @@
  */
 
 body {
-  background-color: lightgray;
+  background-color: white;
   margin: 0;
   padding: 0;
   font-family: Helvetica Neue, HelveticaNeue, Helvetica;
@@ -87,6 +87,16 @@ html {
   top: 0px;
   border-left: 1px solid lightgray;
   background-color: #f7f8fa;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar_container section {
+  display: block;
+  background-color: #fff;
+  padding: 20px;
+  text-align: left;
+  border-bottom: solid 1px #eeeff2;
 }
 
 .photo_container {
@@ -134,5 +144,11 @@ html {
 .profile-pic {
   width: 80px;
   height: 80px;
+  border-radius: 50%;
+}
+
+.mini_profile_pic {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }

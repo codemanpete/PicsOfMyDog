@@ -60,7 +60,11 @@ class Tagging extends React.Component {
 
   buttonClicked(e) {
     e.preventDefault();
-    this.setState({ clicked: true });
+    if (this.state.clicked) {
+      this.setState({ clicked: false });
+    } else {
+      this.setState({ clicked: true });
+    }
   }
 
   render() {

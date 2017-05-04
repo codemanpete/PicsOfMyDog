@@ -23,7 +23,6 @@ class UploadButton extends React.Component {
           height: results[0].height,
           width: results[0].width
         };
-        console.log(results);
         this.props.postPhoto({photo: newPhoto});
         this.navigateToProfile();
       }

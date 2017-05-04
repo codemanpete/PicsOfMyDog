@@ -41,3 +41,10 @@ export const fetchPetsPhotos = (id) => {
     url: `/api/pets/${id}/photos`
   });
 };
+
+export const fetchOwner = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/users/${id}`
+  });
+};

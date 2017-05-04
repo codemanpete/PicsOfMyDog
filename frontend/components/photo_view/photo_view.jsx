@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import OwnerLink from './owner_link';
+import OwnerLinkContainer from './owner_link_container';
 import TaggingContainer from './tagging_container';
 
 class PhotoView extends React.Component {
@@ -24,10 +24,12 @@ class PhotoView extends React.Component {
           <img className="photo" src={photo.photo_url} alt={photo.title} />
         </div>
         <div className="sidebar_container">
-          <div>
-            <OwnerLink owner_id={photo.owner_id} owner_name={photo.owner_name} />
-          </div>
-          <TaggingContainer photo={photo} />
+          <section className="photo_owner">
+            <OwnerLinkContainer owner_id={photo.owner_id} owner_name={photo.owner_name} />
+          </section>
+          <section className="tagging_container">
+            <TaggingContainer photo={photo} />
+          </section>
         </div>
       </div>
     );
