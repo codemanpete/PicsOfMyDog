@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     end
     resources :photos, only: [:create, :show, :index]
     resources :taggings, only: [:create]
+    resources :comments, only: [:create]
   end
 end

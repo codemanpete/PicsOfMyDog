@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
   has_many :photos, :class_name => "Photo", :foreign_key => "owner_id"
   has_many :pets, :class_name => "Pet", :foreign_key => "user_id"
+  has_many :comments, :class_name => "Comment", :foreign_key => "commenter_id"
 
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)

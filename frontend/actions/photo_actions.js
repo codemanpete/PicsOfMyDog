@@ -20,10 +20,10 @@ export const receiveTagging = (tagging) => ({
   tagging
 });
 
-export const receiveOwner = owner => ({
-  type: RECEIVE_OWNER,
-  owner
-});
+// export const receiveOwner = owner => ({
+//   type: RECEIVE_OWNER,
+//   owner
+// });
 
 export const requestAllPhotos = () => (dispatch) => (
   APIUtil.fetchAllPhotos().then(
@@ -61,8 +61,14 @@ export const createTagging = tagging => dispatch => (
   )
 );
 
-export const requestOwner = id => dispatch => (
-  APIUtil.fetchOwner(id).then(
-    (owner) => dispatch(receiveOwner(owner))
+export const createComment = comment => dispatch => (
+  APIUtil.createComment(comment).then(
+    (updatedPhoto) => dispatch(receivePhoto(updatedPhoto))
   )
 );
+
+// export const requestOwner = id => dispatch => (
+//   APIUtil.fetchOwner(id).then(
+//     (owner) => dispatch(receiveOwner(owner))
+//   )
+// );

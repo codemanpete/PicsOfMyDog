@@ -12,9 +12,13 @@ const _emptyPhoto = {
 const PhotoReducer = (state = _emptyPhoto, action) => {
   switch(action.type){
     case RECEIVE_PHOTO:
-      return merge({}, state, action.photo);
-    case RECEIVE_OWNER:
-      return merge({}, state, {owner: action.owner});
+      let nextState = merge({}, state, action.photo);
+      nextState.taggings = action.photo.taggings;
+      nextState.comments = action.photo.comments;
+      // merge does not interact with arrays as expected
+      return nextState;
+    // case RECEIVE_OWNER:
+    //   return merge({}, state, {owner: action.owner});
     default:
       return state;
   }

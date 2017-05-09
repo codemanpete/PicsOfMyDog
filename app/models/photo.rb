@@ -4,6 +4,7 @@ class Photo < ActiveRecord::Base
   belongs_to :owner, :class_name => "User", :foreign_key => "owner_id"
   has_many :taggings
   has_many :pets, :through => :taggings
+  has_many :comments
 
   after_initialize :record_owner
 

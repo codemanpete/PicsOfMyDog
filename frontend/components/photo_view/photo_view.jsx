@@ -1,7 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import OwnerLinkContainer from './owner_link_container';
+import OwnerLink from './owner_link';
 import TaggingContainer from './tagging_container';
+import NewCommentFormContainer from './new_comment_form_container';
+import { Link } from 'react-router';
 
 class PhotoView extends React.Component {
 
@@ -18,6 +20,7 @@ class PhotoView extends React.Component {
 
   render() {
     let photo = this.props.photo;
+    console.log(photo);
     return(
       <div className="main_container">
         <div className="photo_container">
@@ -25,10 +28,13 @@ class PhotoView extends React.Component {
         </div>
         <div className="sidebar_container">
           <section className="photo_owner">
-            <OwnerLinkContainer owner_id={photo.owner_id} owner_name={photo.owner_name} />
+            <OwnerLink owner_id={photo.owner_id} owner={photo.owner} />
           </section>
           <section className="tagging_container">
             <TaggingContainer photo={photo} />
+          </section>
+          <section>
+            <NewCommentFormContainer current_user_id={this.props.currentUser.id} photo_id={photo.id} />
           </section>
         </div>
       </div>

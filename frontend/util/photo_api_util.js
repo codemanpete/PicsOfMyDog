@@ -42,9 +42,17 @@ export const fetchPetsPhotos = (id) => {
   });
 };
 
-export const fetchOwner = (id) => {
+// export const fetchOwner = (id) => {
+//   return $.ajax({
+//     method: 'GET',
+//     url: `/api/users/${id}`
+//   });
+// };
+
+export const createComment = (comment) => {
   return $.ajax({
-    method: 'GET',
-    url: `/api/users/${id}`
+    method: 'POST',
+    url: '/api/comments',
+    data: { comment }
   });
 };

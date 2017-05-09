@@ -38,19 +38,24 @@ class ProfileShow extends React.Component {
   render() {
     return(
       <div>
-        <img className="profile-pic" src={this.props.viewUser.profile_pic_url} alt="Profile Picture" />
-        <button onClick={this.openModal}>Edit Profile</button>
+        <section className="profile_header">
+          <div className="cover_area"></div>
+          <img className="profile-pic" src={this.props.viewUser.profile_pic_url} alt="Profile Picture" />
+          <button onClick={this.openModal}>Edit your profile</button>
+          <div className="user_details">
+            <h1>{this.props.viewUser.name}</h1>
+            <p>{this.props.viewUser.biography}</p>
+          </div>
+        </section>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           contentLabel="Edit Profile"
-        >
+          >
           <EditProfileFormContainer closeModal={this.closeModal} />
           <button onClick={this.closeModal}>close</button>
         </Modal>
-        <h2>{this.props.viewUser.name}</h2>
-        <h4>{this.props.viewUser.biography}</h4>
         <PhotoListContainer userId={this.props.params.userId} />
         <br />
         <PetDockContainer userId={parseInt(this.props.params.userId)} />
