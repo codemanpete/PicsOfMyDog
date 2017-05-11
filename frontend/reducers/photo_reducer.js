@@ -6,7 +6,8 @@ const _emptyPhoto = {
   owner_id: 0,
   title: "",
   taggings: [],
-  owner: {}
+  owner: {},
+  comments: []
 };
 
 const PhotoReducer = (state = _emptyPhoto, action) => {

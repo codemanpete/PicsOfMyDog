@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import OwnerLink from './owner_link';
 import TaggingContainer from './tagging_container';
 import NewCommentFormContainer from './new_comment_form_container';
+import PhotoComments from './photo_comments';
 import { Link } from 'react-router';
 
 class PhotoView extends React.Component {
@@ -20,7 +21,6 @@ class PhotoView extends React.Component {
 
   render() {
     let photo = this.props.photo;
-    console.log(photo);
     return(
       <div className="main_container">
         <div className="photo_container">
@@ -34,7 +34,10 @@ class PhotoView extends React.Component {
             <TaggingContainer photo={photo} />
           </section>
           <section>
-            <NewCommentFormContainer current_user_id={this.props.currentUser.id} photo_id={photo.id} />
+            <NewCommentFormContainer current_user={this.props.currentUser} photo_id={photo.id} />
+          </section>
+          <section>
+            <PhotoComments comments={photo.comments} />
           </section>
         </div>
       </div>

@@ -4,9 +4,7 @@ class NewCommentForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      body: "",
-      commenter_id: this.props.current_user_id,
-      photo_id: this.props.photo_id
+      body: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -20,7 +18,6 @@ class NewCommentForm extends React.Component {
   }
 
   handleKeyDown(e) {
-    console.log(e.key);
     if(e.key === 'Enter' && e.shiftKey === false) {
       e.preventDefault();
       this.handleSubmit();
@@ -28,8 +25,11 @@ class NewCommentForm extends React.Component {
   }
 
   handleSubmit() {
-    let newComment = this.state;
-    console.log(newComment);
+    let newComment = {
+      body: this.state.body,
+      commenter_id: this.props.current_user.id,
+      photo_id: this.props.photo_id
+    };
     this.props.createComment(newComment);
     this.setState({
       body: ""
