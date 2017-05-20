@@ -12,11 +12,14 @@ class Tagging extends React.Component {
   }
 
   componentWillMount() {
-    this.props.requestUserPets(this.props.currentUserId);
+    this.props.requestUserPets(this.props.currentUser.id);
   }
 
   taggingButton() {
-    if (this.props.currentUserId === this.props.photo.owner_id) {
+    if (!this.props.currentUser) {
+      return;
+    }
+    else if (this.props.currentUser.id === this.props.photo.owner_id) {
       return (
         <div>
           <button onClick={ this.buttonClicked }>Tag Photo</button>

@@ -7,7 +7,7 @@ import Tagging from './tagging';
 
 const mapStateToProps = (state) => ({
   pets: selectAllPets(state),
-  currentUserId: state.session.currentUser.id
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -32,7 +32,7 @@ class UploadButton extends React.Component {
   render() {
     return(
       <div>
-        <button className="button" onClick={this.upload}>Upload</button>
+        <a className="nav-button" onClick={this.upload}>Upload</a>
       </div>
     );
   }

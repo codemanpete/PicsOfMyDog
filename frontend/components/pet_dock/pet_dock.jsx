@@ -37,7 +37,9 @@ class PetDock extends React.Component {
   }
 
   createPetForm() {
-    if(this.props.userId === this.props.currentUserId) {
+    if (!this.props.currentUser) {
+      return;
+    } else if (this.props.userId === this.props.currentUser.id) {
       return(
         <div>
           <label> Name:

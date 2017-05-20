@@ -1,0 +1,45 @@
+.intro {
+  background: url("http://res.cloudinary.com/dgsw5a27d/image/upload/v1494550648/scott-webb-resize_sbtogf.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 75%;
+  width: 100%;
+}
+
+.intro-heading {
+  color: #fff;
+  position: relative;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+}
+
+.intro-heading h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.intro-heading h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.intro-button {
+  cursor: pointer;
+  color: #fff;
+  display: block;
+  height: 50px;
+  width: 250px;
+  background-color: #0099e5;
+  border: 1px solid #0088cc;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 48px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.intro-button:hover {
+  background-color: #42b0f4;
+}

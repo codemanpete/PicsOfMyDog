@@ -4,7 +4,7 @@ import { createPet, requestUserPets } from '../../actions/pet_actions';
 import { selectAllPets } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => ({
-  currentUserId: state.session.currentUser.id,
+  currentUser: state.session.currentUser,
   pets: selectAllPets(state)
 });
 
