@@ -9,7 +9,7 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.guestSignIn = this.guestSignIn.bind(this);
+    this.handleGuestSignIn = this.handleGuestSignIn.bind(this);
   }
 
   componentDidUpdate() {
@@ -36,23 +36,25 @@ class SessionForm extends React.Component {
 
   alternativeLink() {
     if (this.props.formType === "login") {
-      return <Link to="/signup">Sign up instead</Link>;
+      return(
+        <div className="alternative-link">
+          Don't have an account? <Link className="blue-link" to="/signup">Sign up</Link>
+        </div>
+      );
     } else {
-      return <Link to="/login">Log in instead</Link>;
+      return(
+        <div className="alternative-link">
+          Already have an account? <Link className="blue-link" to="/login">Log in</Link>
+        </div>
+      );
     }
   }
 
-  guestButton() {
-    if (this.props.formType === "login") {
-      return <button onClick={this.guestSignIn}>Guest Sign In</button>;
-    }
-  }
-
-  guestSignIn() {
-    this.setState({
+  handleGuestSignIn() {
+    this.props.login({ user: {
       username: "example",
       password: "password"
-    });
+    }});
   }
 
   renderErrors() {
@@ -65,30 +67,41 @@ class SessionForm extends React.Component {
     );
   }
 
+  renderHeader() {
+    if (this.props.formType === "login") {
+      return <h1>Login to 500Picsofmydog</h1>;
+    } else {
+      return <h1>Join 500Picsofmydog</h1>;
+    }
+  }
+
   render() {
     return(
-      <form onSubmit={this.handleSubmit}>
-        Welcome to 500 Pics of my Dog!
-        <br/>
-        Please {this.props.formType} or {this.alternativeLink()}
-        {this.renderErrors()}
-        <br/>
-        <label> Username:
-          <input type="text"
-            value={this.state.username}
-            onChange={this.update('username')} />
-        </label>
-        <br/>
-        <label> Password:
-          <input type="password"
-            value={this.state.password}
-            onChange={this.update('password')} />
-        </label>
-        <br/>
-
-        <button type="submit" name="action" value="Submit">Submit</button>
-        {this.guestButton()}
-      </form>
+      <div className="session-background">
+        <div className="session-box">
+          {this.renderHeader()}
+          <div>
+            <form onSubmit={this.handleSubmit}>
+              {this.renderErrors()}
+              <div>
+                <label>Username</label>
+                <input type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')} />
+              </div>
+              <div>
+                <label>Password</label>
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')} />
+              </div>
+              <button className="session-box-button green-button" type="submit" name="action" value="Submit">{this.props.formType}</button>
+            </form>
+          </div>
+          <a className="session-box-button blue-button" href="/" onClick={this.handleGuestSignIn}>Continue as Guest</a>
+          {this.alternativeLink()}
+        </div>
+      </div>
     );
   }
 }
