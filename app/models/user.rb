@@ -15,7 +15,6 @@ class User < ActiveRecord::Base
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)
     @password = password
-    # what is this for
   end
 
   def self.find_by_credentials(username, password)

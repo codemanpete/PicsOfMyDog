@@ -4,6 +4,8 @@ import { withRouter } from 'react-router';
 import PhotoListContainer from '../photo_list/photo_list_container';
 import PetDockContainer from '../pet_dock/pet_dock_container';
 import EditProfileFormContainer from '../edit_profile_form/edit_profile_form_container';
+import ComponentNavBar from './component_nav_bar';
+
 const appElement = document.getElementById('root');
 
 class ProfileShow extends React.Component {
@@ -56,9 +58,8 @@ class ProfileShow extends React.Component {
           <EditProfileFormContainer closeModal={this.closeModal} />
           <button onClick={this.closeModal}>close</button>
         </Modal>
-        <PhotoListContainer userId={this.props.params.userId} />
-        <br />
-        <PetDockContainer userId={parseInt(this.props.params.userId)} />
+        <ComponentNavBar userId={this.props.params.userId}/>
+
       </div>
     );
   }
