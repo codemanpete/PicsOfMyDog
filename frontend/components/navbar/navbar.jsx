@@ -36,9 +36,6 @@ class Navbar extends React.Component {
           <li>
             <Link className="nav-button" to="/photos">500Picsofmydog</Link>
           </li>
-          <li>
-            <span className="nav-button">(Search Bar)</span>
-          </li>
         </ul>
         <ul style={{float: "right"}}>
           <li>
