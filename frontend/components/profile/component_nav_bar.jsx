@@ -40,14 +40,16 @@ class ComponentNavBar extends React.Component {
   render() {
     return(
       <div>
-        <ul>
-          <li>
-            <a onClick={this.setSelected("photos")}>PHOTOS</a>
-          </li>
-          <li>
-            <a onClick={this.setSelected("pets")}>PETS</a>
-          </li>
-        </ul>
+        <div className="navbar middle-bar clearfix">
+          <ul className="clearfix mid-nav">
+            <li>
+              <a className={`${this.state.selected === "photos" ? 'selected-link' : ''} nav-button`} onClick={this.setSelected("photos")}>PHOTOS</a>
+            </li>
+            <li>
+              <a className={`${this.state.selected === "pets" ? 'selected-link' : ''} nav-button`} onClick={this.setSelected("pets")}>PETS</a>
+            </li>
+          </ul>
+        </div>
         {this.selectedComponent()}
       </div>
     );

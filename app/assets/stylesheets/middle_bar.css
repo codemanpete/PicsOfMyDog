@@ -1,0 +1,19 @@
+.middle-bar ul {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mid-nav li a:hover {
+  background-color: #fff;
+}
+
+.mid-nav li a {
+  color: #71767a;
+}
+
+.selected-link {
+  color: #0099e5 !important;
+  border-bottom: 2px solid #0099e5 !important;
+  padding: 16px 16px 13px 16px !important;
+}
