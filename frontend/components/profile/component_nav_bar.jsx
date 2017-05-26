@@ -22,15 +22,11 @@ class ComponentNavBar extends React.Component {
   selectedComponent() {
     if(this.state.selected === "photos") {
       return(
-        <div>
-          <PhotoListContainer userId={this.props.userId} />
-        </div>
+        <PhotoListContainer userId={this.props.userId} />
       );
     } else if (this.state.selected === "pets") {
       return(
-        <div>
-          <PetDockContainer userId={parseInt(this.props.userId)} />
-        </div>
+        <PetDockContainer userId={parseInt(this.props.userId)} />
       );
     } else {
       return;

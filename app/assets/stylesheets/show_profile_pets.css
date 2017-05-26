@@ -1,0 +1,101 @@
+.pet-dock-list {
+  display: block;
+  margin: 0 auto;
+}
+
+.card {
+  display: inline-block;
+  height: 330px;
+  width: 358px;
+  margin: 0 25px 50px 25px;
+  text-align: center;
+  border: 1px solid #eeeff2;
+  vertical-align: top;
+  position: relative;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.pet-dock-container {
+  display: block;
+  margin-top: 25px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1230px) {
+  .pet-dock-list {
+    max-width: 790px;
+  }
+
+  .card {
+    margin: 0 10px 20px 10px;
+  }
+}
+
+@media only screen and (min-width: 1270px) {
+  .pet-dock-list {
+    width: 1230px;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1680px) {
+  .pet-dock-list {
+    width: 1640px;
+    text-align: left;
+  }
+}
+
+.create-icon {
+  background-image: url(//assetcdn.500px.org/assets/galleries/plus-f58d62978315409b722ab3ee74c7d6cf.svg);
+  background-position: 50% 110px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  padding-top: 165px;
+  box-sizing: border-box;
+}
+
+.create-text {
+  color: #0099e5;
+  font-size: 20px;
+}
+
+.link-wrap {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom;
+  z-index: 100;
+  background: transparent;
+}
+
+.card-top {
+  position: relative;
+  height: 240px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-color: #b9c1c7;
+  border-radius: 3px 3px 0 0;
+  border: 1px solid #eeeff2;
+  border-bottom: none;
+  border-top: none;
+}
+
+.card-bottom {
+  height: 90px;
+  padding-top: 15px;
+  width: 100%;
+  border: 1px solid #eeeff2;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  font-size: 20px;
+  line-height: 1.4em;
+  color: #525558;
+}
