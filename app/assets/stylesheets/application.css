@@ -93,7 +93,7 @@ html {
 }
 
 .list_photos div {
-  margin: 2px;
+  margin: 5px;
   background-color: gray;
   position: relative;
 }

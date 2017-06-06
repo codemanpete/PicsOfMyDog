@@ -8,6 +8,15 @@ import ComponentNavBar from './component_nav_bar';
 
 const appElement = document.getElementById('root');
 
+const customStyle = {
+  content: {
+    width: '580px',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+  }
+};
+
 class ProfileShow extends React.Component {
   constructor() {
     super();
@@ -54,6 +63,7 @@ class ProfileShow extends React.Component {
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           contentLabel="Edit Profile"
+          style={customStyle}
           >
           <EditProfileFormContainer closeModal={this.closeModal} />
           <button onClick={this.closeModal}>close</button>

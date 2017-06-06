@@ -52,8 +52,7 @@ class PetDock extends React.Component {
       createPetModalOpen: false
     });
   }
-
-  //retired
+  
   createPetModal() {
     return(
       <Modal
