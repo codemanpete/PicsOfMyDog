@@ -1,1 +1,1 @@
-live: https://picsofmydog.herokuapp.com/
+live: https://picsofmydog.herokuapp.com
