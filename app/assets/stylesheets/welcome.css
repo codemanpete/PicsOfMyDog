@@ -44,3 +44,9 @@
 .intro-button:hover {
   background-color: #34e20d;
 }
+
+.about-me {
+  position: relative;
+  top: 85%;
+  left: 5%;
+}
