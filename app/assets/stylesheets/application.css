@@ -99,6 +99,10 @@ html {
   position: relative;
 }
 
+.toggleTagDisplay {
+  padding-right: 4px;
+}
+
 .list_photos i {
   display: block;
 }

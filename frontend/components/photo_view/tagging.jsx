@@ -22,7 +22,10 @@ class Tagging extends React.Component {
     else if (this.props.currentUser.id === this.props.photo.owner_id) {
       return (
         <div>
-          <button onClick={ this.buttonClicked }>Tag Photo</button>
+          <div className="show-tags-button" onClick={ this.buttonClicked }>
+            <span className="toggleTagDisplay">Tag Photo</span>
+            <div className={ this.state.clicked ? 'arrow-up' : 'arrow-down' }></div>
+          </div>
           { this.showTags() }
         </div>
       );
@@ -39,8 +42,8 @@ class Tagging extends React.Component {
         <div>
           <ul>
             {untaggedPets.map(pet => (
-              <li>
-                <button onClick={ this.createTag(pet) }>{pet.pet_name}</button>
+              <li key={ pet.id }>
+                <div className="tag-pet-button tag-link" onClick={ this.createTag(pet) }>{pet.pet_name}</div>
               </li>
             ))}
           </ul>
@@ -92,8 +95,8 @@ class Tagging extends React.Component {
                 <Link
                   key={tag.pet_id}
                   to={`/pets/${tag.pet_id}/photos`}
-                  className="tag-link
-                  ">{ this.commaStringName(tag.pet_name, idx, this.props.photo.taggings.length) }
+                  className="tag-link"
+                  >{ this.commaStringName(tag.pet_name, idx, this.props.photo.taggings.length) }
                 </Link>
               );
             })}
