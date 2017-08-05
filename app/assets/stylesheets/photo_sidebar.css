@@ -18,4 +18,14 @@
 .owner-link .right {
   float: left;
   padding-left: 10px;
+  color: #42b0f4;
+}
+
+.tag-link {
+  color: #42b0f4;
+  text-decoration: none;
+}
+
+.tag-link:hover {
+  text-decoration: underline;
 }

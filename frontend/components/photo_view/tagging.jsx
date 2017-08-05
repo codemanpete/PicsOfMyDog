@@ -70,17 +70,34 @@ class Tagging extends React.Component {
     }
   }
 
+  commaStringName(name, idx, length) {
+    if (length === 1) {
+      return name;
+    } else if (length === 2) {
+      return (idx === 0) ? `${name} ` : `and ${name}`;
+    } else {
+      return (idx < length - 1) ? `${name}, ` : `and ${name}`;
+    }
+
+  }
+
   render() {
     return (
-      <div>
-        <div>
-          <ul>
-            { this.props.photo.taggings.map(tag =>
-              <li key={tag.pet_id}>
-                <Link to={`/pets/${tag.pet_id}/photos`}>{tag.pet_name}</Link>
-              </li>
-            )}
-          </ul>
+      <div className="taggings-wrapper">
+        <div className="taggings-list">
+          <p>
+            Tags:&nbsp;
+            { this.props.photo.taggings.map((tag, idx) => {
+              return(
+                <Link
+                  key={tag.pet_id}
+                  to={`/pets/${tag.pet_id}/photos`}
+                  className="tag-link
+                  ">{ this.commaStringName(tag.pet_name, idx, this.props.photo.taggings.length) }
+                </Link>
+              );
+            })}
+          </p>
         </div>
         { this.taggingButton() }
       </div>
