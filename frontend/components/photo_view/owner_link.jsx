@@ -2,10 +2,14 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const OwnerLink = ({owner, owner_id}) => (
-  <div>
+  <div className="owner-link">
     <Link to={`/users/${owner_id}`}>
-      <img className="mini_profile_pic" src={owner.profile_pic_url} alt={owner.username} />
-      <span>{owner.owner_name}</span>
+      <div className="left">
+        <img className="mini_profile_pic" src={owner.profile_pic_url} alt={owner.username} />
+      </div>
+      <div className="right">
+        <span>{owner.owner_name}</span>
+      </div>
     </Link>
   </div>
 );
