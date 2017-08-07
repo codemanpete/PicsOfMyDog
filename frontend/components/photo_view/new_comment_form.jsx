@@ -27,7 +27,7 @@ class NewCommentForm extends React.Component {
   handleSubmit() {
     let newComment = {
       body: this.state.body,
-      commenter_id: this.props.current_user.id,
+      commenter_id: this.props.currentUser.id,
       photo_id: this.props.photo_id
     };
     this.props.createComment(newComment);
@@ -37,11 +37,16 @@ class NewCommentForm extends React.Component {
   }
 
   render() {
+    const currentUser = this.props.currentUser;
     return(
       <div>
+        <div className="">
+          <img className="mini_comment_pic" src={currentUser.profile_pic_url} alt={currentUser.username}/>
+        </div>
         <form
           onKeyDown={this.handleKeyDown}>
           <textarea
+            className="new-comment-field"
             placeholder="Add a comment"
             rows="1"
             value={this.state.body}

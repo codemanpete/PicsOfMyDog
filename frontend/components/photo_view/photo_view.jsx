@@ -34,7 +34,7 @@ class PhotoView extends React.Component {
             <TaggingContainer photo={photo} />
           </section>
           <section>
-            <NewCommentFormContainer current_user={this.props.currentUser} photo_id={photo.id} />
+            <NewCommentFormContainer photo_id={photo.id} />
           </section>
           <section>
             <PhotoComments comments={photo.comments} />
