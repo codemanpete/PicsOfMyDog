@@ -6,7 +6,7 @@ const PhotoComments = ({ comments }) => (
     <ul>
       {comments.map( comment => (
         <li key={comment.id}>
-          <img className="mini_comment_pic" src={comment.owner_pic} alt={comment.owner_name} />
+          <img className="mini-comment-pic" src={comment.owner_pic} alt={comment.owner_name} />
           <Link to={`/users/${comment.owner_id}`}>
             <span>
               {comment.owner_name}

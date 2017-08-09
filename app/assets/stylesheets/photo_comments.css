@@ -5,9 +5,43 @@
   font-size: 12px;
   border: 1px solid #eeeff2;
   box-sizing: content-box;
-  width: calc(100%-39px);
+  width: calc(100% - 39px);
   resize: none;
   padding: 10px 30px 10px 10px;
   max-height: 75px;
 
+}
+
+.textarea--ghost {
+  visibility: hidden;
+  display: block;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  position: relative;
+  top: 0;
+  width: calc(100% - 49px);
+}
+
+.textarea--container {
+  position: relative;
+  width: 100%;
+}
+
+.new-comment-form .left {
+  float: left;
+}
+
+.new-comment-form .right {
+  float: left;
+  padding-left: 15px;
+  width: calc(100% - 39px);
+}
+
+.mini-comment-pic {
+  position: relative;
+  transform: translateY(50%);
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }
