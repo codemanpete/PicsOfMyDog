@@ -24,6 +24,13 @@ class Api::PhotosController < ApplicationController
     render "/api/photos/index"
   end
 
+  def destroy
+    @photo = Photo.find(params[:id])
+    @user = User.find(@photo.owner_id)
+    @photo.destroy
+    render "/api/users/show"
+  end
+
   private
 
   def photo_params

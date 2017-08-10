@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :pets, only: [:create] do
       resources :photos, only: [:index]
     end
-    resources :photos, only: [:create, :show, :index]
+    resources :photos, only: [:create, :show, :index, :destroy]
     resources :taggings, only: [:create]
     resources :comments, only: [:create]
   end
