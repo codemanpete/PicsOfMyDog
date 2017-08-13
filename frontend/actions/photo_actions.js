@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/photo_api_util';
+import { receiveUser } from './profile_actions';
 
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
 export const RECEIVE_ALL_PHOTOS = "RECEIVE_ALL_PHOTOS";
@@ -46,6 +47,12 @@ export const requestPetsPhotos = (id) => dispatch => (
 export const fetchPhoto = id => dispatch => (
   APIUtil.fetchPhoto(id).then(
     (photo) => dispatch(receivePhoto(photo))
+  )
+);
+
+export const deletePhoto = id => dispatch => (
+  APIUtil.deletePhoto(id).then(
+    updatedUser => dispatch(receiveUser(updatedUser))
   )
 );
 

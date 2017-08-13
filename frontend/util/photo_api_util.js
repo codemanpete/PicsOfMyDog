@@ -13,6 +13,13 @@ export const fetchPhoto = (id) => {
   });
 };
 
+export const deletePhoto = (id) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/photos/${id}`
+  });
+};
+
 export const fetchAllPhotos = () => {
   return $.ajax({
     method: 'GET',

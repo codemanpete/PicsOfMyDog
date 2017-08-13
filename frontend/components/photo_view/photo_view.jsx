@@ -7,6 +7,10 @@ import PhotoComments from './photo_comments';
 import { Link } from 'react-router';
 
 class PhotoView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
 
   componentWillMount() {
     this.props.fetchPhoto(this.props.params.photoId);
@@ -17,6 +21,12 @@ class PhotoView extends React.Component {
   //     this.props.fetchPhoto(this.props.params.photoId);
   //   }
   // }
+
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deletePhoto(this.props.photo.id);
+    this.props.router.push(`/users/${this.props.currentUser.id}`);
+  }
 
 
   render() {
@@ -29,6 +39,7 @@ class PhotoView extends React.Component {
         <div className="sidebar_container">
           <section className="photo_owner">
             <OwnerLink owner_id={photo.owner_id} owner={photo.owner} />
+            <button onClick={ this.handleDelete }>Delete</button>
           </section>
           <section className="tagging_container">
             <TaggingContainer photo={photo} />

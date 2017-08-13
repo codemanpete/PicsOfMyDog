@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPhoto } from '../../actions/photo_actions';
+import { fetchPhoto, deletePhoto } from '../../actions/photo_actions';
 
 import PhotoView from './photo_view';
 
@@ -9,7 +9,8 @@ const mapStateToProps = ({ photo, session }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchPhoto: id => dispatch(fetchPhoto(id))
+  fetchPhoto: id => dispatch(fetchPhoto(id)),
+  deletePhoto: id => dispatch(deletePhoto(id))
 });
 
 export default connect(
