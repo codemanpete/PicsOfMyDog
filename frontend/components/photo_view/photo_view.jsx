@@ -39,6 +39,7 @@ class PhotoView extends React.Component {
         <div className="sidebar_container">
           <section className="photo_owner">
             <OwnerLink owner_id={photo.owner_id} owner={photo.owner} />
+            <br />
             <button onClick={ this.handleDelete }>Delete</button>
           </section>
           <section className="tagging_container">
