@@ -23,7 +23,6 @@ class PetDock extends React.Component {
 
   openModal() {
     this.setState({createPetModalOpen: true});
-    console.log("success");
   }
 
   afterOpenModal() {
@@ -52,7 +51,7 @@ class PetDock extends React.Component {
       createPetModalOpen: false
     });
   }
-  
+
   createPetModal() {
     return(
       <Modal

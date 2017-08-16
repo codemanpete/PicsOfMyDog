@@ -50,7 +50,8 @@ class SessionForm extends React.Component {
     }
   }
 
-  handleGuestSignIn() {
+  handleGuestSignIn(e) {
+    e.preventDefault();
     this.props.login({ user: {
       username: "example",
       password: "password"
