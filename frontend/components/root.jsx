@@ -22,7 +22,7 @@ const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/');
+      replace('/photos');
     }
   };
 
@@ -31,7 +31,7 @@ const Root = ({ store }) => {
       <Router history={ hashHistory }>
         <Redirect from="/" to="/welcome" />
         <Route path="/" component={ App }>
-          <Route path="/welcome" component={ Welcome } />
+          <Route path="/welcome" component={ Welcome } onEnter={ _redirectIfLoggedIn } />
           <Route path="/login" component={ SessionFormContainer } onEnter={ _redirectIfLoggedIn } />
           <Route path="/signup" component={ SessionFormContainer} onEnter={ _redirectIfLoggedIn } />
           <Route path="/users/:userId" component={ ProfileShowContainer } onEnter={ _ensureLoggedIn } />
